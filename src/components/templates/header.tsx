@@ -53,9 +53,10 @@ text-transform: capitalize;
 
 export const Header = () => (<HeaderX>
     <HeaderIcon />
-    <OptionContainer ><p>home</p> <p>history</p> <p>contact</p></OptionContainer >
+    <OptionContainer >
+        <p>home</p>
+        <p>history</p> <p>contact</p></OptionContainer >
     <RightContainerHeader>
-
         <HamburgerMenu >
             <div></div>
             <div></div>
@@ -63,6 +64,6 @@ export const Header = () => (<HeaderX>
         </HamburgerMenu >
         {/* <Search /> */}
     </RightContainerHeader>
-{/* <img src="" alt="" /> */}
+    {/* <img src="" alt="" /> */}
 </HeaderX>
 )
