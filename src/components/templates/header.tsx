@@ -2,6 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { HeaderIcon } from '../UI/atoms/icon';
 import { Search } from '../UI/molecules/searchImage'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+    faSearch
+} from '@fortawesome/free-solid-svg-icons'
 
 const HeaderX = styled.div`
     background-color:none;
@@ -56,6 +60,8 @@ export const Header = () => (<HeaderX>
     <OptionContainer >
         <p>home</p>
         <p>history</p> <p>contact</p></OptionContainer >
+    <FontAwesomeIcon style={{ border: '2px solid white', borderRadius: '100%', height: '15px', color: 'white', padding: '10px' }} icon={faSearch} />
+
     <RightContainerHeader>
         <HamburgerMenu >
             <div></div>

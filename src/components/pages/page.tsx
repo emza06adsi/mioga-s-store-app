@@ -5,14 +5,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faRoute,
     faCartShopping,
-    faCalendarDays
+    faCalendarDays,faSearch
 } from '@fortawesome/free-solid-svg-icons'
 
 const Image = styled.div`
 margin: 0%;
 width: 100%;
 height: 100vh;
+background-image: url('https://i.pinimg.com/564x/ad/e6/ed/ade6edae6a9263d2d8fbc0951fde9e36.jpg');
+background-image: url('https://i.pinimg.com/564x/57/0d/4f/570d4f024950142992be6458bdfd4747.jpg');
+background-image: url('https://i.pinimg.com/564x/fa/8e/fe/fa8efe337f2a55cdac56529937530b4b.jpg');
+background-image: url('https://i.pinimg.com/564x/01/2a/27/012a27d3ed6c1265a01f2ed8bc9fff68.jpg');
+background-image: url('https://i.pinimg.com/564x/49/ca/18/49ca18cae8391087e48198cab95abb2c.jpg');
 background-image: url('https://i.pinimg.com/564x/41/f4/26/41f426b4cb4d4d45b3fc2d5e15783bd4.jpg');
+
 background-position: center center;
 background-repeat: no-repeat;
 background-size: 100%;
