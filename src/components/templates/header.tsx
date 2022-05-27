@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import { HeaderIcon } from '../UI/atoms/icon';
-import { Search } from '../UI/molecules/searchImage'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faSearch
 } from '@fortawesome/free-solid-svg-icons'
 
-const HeaderX = styled.div`
+import { HeaderTextContainer } from '../UI/organisms/HeaderContainerText';
+import { HamburgerMenu } from '../UI/organisms/hamburgerMenu';
+const HeaderX = styled.header`
     background-color:none;
     color: #eeecef;
     width: 100%;
@@ -16,6 +17,14 @@ const HeaderX = styled.div`
     align-items: center;
     justify-content: space-between;
     position: absolute;
+
+    .icon{
+     border: 2px solid white;
+     border-radius: 100%;
+    height: 15px;
+    color: white;
+    padding: 10px;
+    }
 
 `;
 
@@ -28,48 +37,15 @@ align-items: center;
 justify-content: end;
 `;
 
-const HamburgerMenu = styled.div`
-    height: 20px;
-    width: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-right:30px ;
-    div{
-        width: 100%;
-        height: 2px;
-        background-color: white;
-    }
-`;
 
-const OptionContainer = styled.div`
-display: flex;
-align-items: center;
-justify-content: space-around;
-height: 119.56px;
-width: 40%;
-margin-right: 400px;
-font-size: 24px;
-font-weight: 400;
-font-family: poppins;
-text-transform: capitalize;
-`;
+
 
 export const Header = () => (<HeaderX>
     <HeaderIcon />
-    <OptionContainer >
-        <p>home</p>
-        <p>history</p> <p>contact</p></OptionContainer >
-    <FontAwesomeIcon style={{ border: '2px solid white', borderRadius: '100%', height: '15px', color: 'white', padding: '10px' }} icon={faSearch} />
-
+    <HeaderTextContainer />
+    <FontAwesomeIcon className={'icon'} icon={faSearch} />
     <RightContainerHeader>
-        <HamburgerMenu >
-            <div></div>
-            <div></div>
-            <div></div>
-        </HamburgerMenu >
-        {/* <Search /> */}
+        <HamburgerMenu />
     </RightContainerHeader>
-    {/* <img src="" alt="" /> */}
 </HeaderX>
 )
