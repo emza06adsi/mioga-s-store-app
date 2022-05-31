@@ -2,6 +2,8 @@ import React, { useReducer } from "react";
 import styled from "styled-components";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { reducer } from "../../redux/reducer";
+import { HamburgerInitialState } from "../../redux/state";
 const HamburgerMenu_ = styled.div`
   height: 20px;
   width: 40px;
@@ -9,6 +11,7 @@ const HamburgerMenu_ = styled.div`
   flex-direction: column;
   justify-content: space-between;
   margin-right: 30px;
+  cursor: pointer;
   div {
     width: 100%;
     height: 2px;
@@ -19,39 +22,23 @@ const HamburgerMenu_ = styled.div`
   }
 `;
 
-interface IHamburger {
-  state: boolean;
-}
 
-export const HamburgerInitialState: IHamburger = { state: true };
-
-export const reducer = (state: IHamburger, action: any) => {
-  switch (action.type) {
-    case false:
-      return { ...state, state: false };
-    case true:
-      return { ...state, state: true };
-    default:
-      return state;
-  }
-};
 
 export const HamburgerMenu = () => {
-  const [HamburgerState, dispatch] = useReducer(reducer, HamburgerInitialState);
+  const [HamburgerState, dispatch] = useReducer(
+    reducer,
+    HamburgerInitialState
+  );
 
   const handleComplete = () => {
-    dispatch({ type: false, state: !handleComplete });
+    dispatch({ type: !HamburgerState.state, state: !HamburgerState.state });
     console.log(HamburgerState);
   };
 
   return (
-    <HamburgerMenu_>
+    <HamburgerMenu_ onClick={handleComplete}>
       {HamburgerState.state ? (
-        <FontAwesomeIcon
-          onClick={handleComplete}
-          className={"icon"}
-          icon={faClose}
-        />
+        <FontAwesomeIcon className={"icon"} icon={faClose} />
       ) : (
         <>
           <div></div>
