@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { HeaderIcon } from '../UI/atoms/icon';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-    faSearch
+    faSearch 
 } from '@fortawesome/free-solid-svg-icons'
 
 import { HeaderTextContainer } from '../UI/organisms/HeaderContainerText';
