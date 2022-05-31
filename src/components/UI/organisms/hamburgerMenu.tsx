@@ -2,8 +2,7 @@ import React, { useReducer } from "react";
 import styled from "styled-components";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { reducer } from "../../redux/reducer";
-import { HamburgerInitialState } from "../../redux/state";
+
 const HamburgerMenu_ = styled.div`
   height: 20px;
   width: 40px;
@@ -22,22 +21,23 @@ const HamburgerMenu_ = styled.div`
   }
 `;
 
+interface IHamburguerState {
+  hamburguerState: boolean;
+  setHamburguerState: any;
+}
 
-
-export const HamburgerMenu = () => {
-  const [HamburgerState, dispatch] = useReducer(
-    reducer,
-    HamburgerInitialState
-  );
+export const HamburgerMenu = ({
+  hamburguerState,
+  setHamburguerState,
+}: IHamburguerState) => {
 
   const handleComplete = () => {
-    dispatch({ type: !HamburgerState.state, state: !HamburgerState.state });
-    console.log(HamburgerState);
+    setHamburguerState(!hamburguerState)
   };
 
   return (
     <HamburgerMenu_ onClick={handleComplete}>
-      {HamburgerState.state ? (
+      {hamburguerState ? (
         <FontAwesomeIcon className={"icon"} icon={faClose} />
       ) : (
         <>

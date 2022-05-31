@@ -1,9 +1,7 @@
-import React, { useReducer, useEffect } from "react";
+import React, { useReducer, useEffect, useState } from "react";
 import styled from "styled-components";
 import { Header } from "../templates/header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { HamburgerInitialState } from "../redux/state";
-import { reducer } from "../redux/reducer";
 import {
   faRoute,
   faCartShopping,
@@ -117,17 +115,11 @@ const HamburgerModal = styled.div`
   top: 0;
 `;
 const PrincipalPage = () => {
-  const [hamburguer, dispatch] = useReducer(reducer, HamburgerInitialState);
-
-  useEffect(() => {
-    dispatch({ type: hamburguer.state, state: hamburguer.state });
-
-    debugger;
-  }, [HamburgerInitialState.state]);
+  const [hamburguerState, setHamburguerState] = useState(true);
 
   return (
     <>
-      <Header />
+      <Header hamburguerState={hamburguerState} setHamburguerState={setHamburguerState} />
       {/* <iframe width={'100%'} height={'500px'} src="https://www.enelsofa.com/sofa2021/"></iframe> */}
 
       <Image>
@@ -162,7 +154,7 @@ const PrincipalPage = () => {
           />
         </Options>
       </Image>
-      {hamburguer.state ? <HamburgerModal></HamburgerModal> : <></>}
+      {hamburguerState ? <HamburgerModal></HamburgerModal> : <></>}
     </>
   );
 };
