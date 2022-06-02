@@ -13,12 +13,14 @@ const OptionContainer = styled.div`
 
 export const HeaderTextContainer = (props: any) => (
   <OptionContainer>
-    <Link
-      style={{ display: "block", margin: "1rem 0" }}
-      to={`/invoices`}
-    >dsds</Link>
-    <HeaderTex name={"home"} />
-    <HeaderTex name={"history"} />
-    <HeaderTex name={"contact"} />
+    <Link style={{ display: "block", margin: "1rem 0" }} to={`/`}>
+      <HeaderTex name={"home"} />
+    </Link>
+    <Link style={{ display: "block", margin: "1rem 0" }} to={`/sofa`}>
+      <HeaderTex name={"sofa"} />
+    </Link>
+    <Link style={{ display: "block", margin: "1rem 0" }} to={`/location`}>
+      <HeaderTex name={"location"} />
+    </Link>
   </OptionContainer>
 );

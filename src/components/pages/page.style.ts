@@ -26,7 +26,17 @@ export const Image2 = styled.div`
   margin: 0%;
   width: 100%;
   height: 100vh;
-  background-image: url("https://i.pinimg.com/564x/49/ca/18/49ca18cae8391087e48198cab95abb2c.jpg");
+  background-image: url("https://i.pinimg.com/564x/f3/3f/6f/f33f6f1971574e5b3966440ecc2d041d.jpg");
+  background-position-x: center;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+`;
+export const Image3 = styled.div`
+  margin: 0%;
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://i.pinimg.com/564x/57/0d/4f/570d4f024950142992be6458bdfd4747.jpg");
   background-position-x: center;
   background-position-y: center;
   background-repeat: no-repeat;

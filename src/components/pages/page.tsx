@@ -17,6 +17,7 @@ import {
   TextHeaderContainer,
   Image,
   Image2,
+  Image3,
 } from "./page.style";
 
 const PrincipalPage = () => {
@@ -39,9 +40,18 @@ const PrincipalPage = () => {
           }
         />
         <Route
-          path="invoices"
+          path="sofa"
           element={
             <App2
+              hamburguerState={hamburguerState}
+              setHamburguerState={setHamburguerState}
+            />
+          }
+        />
+        <Route
+          path="location"
+          element={
+            <App3
               hamburguerState={hamburguerState}
               setHamburguerState={setHamburguerState}
             />
@@ -134,6 +144,46 @@ const App2 = ({ hamburguerState, setHamburguerState }: IHamburguerState) => {
         </Options>
       )}
     </Image2>
+  );
+};
+
+const App3 = ({ hamburguerState, setHamburguerState }: IHamburguerState) => {
+  return (
+    <Image3
+      onClick={() => {
+        setHamburguerState(false);
+      }}
+    >
+      <TextHeaderContainer>
+        <p className="principalText"> store mioga's</p>
+        <p className="nextText">
+          Win, and you’re in. It’s the Breeders’ Cup Challenge Series, where the
+          world’s top Thoroughbreds compete for a starting spot at the 2022
+          Breeders’ Cup World Championships at Keeneland, Nov 4 & 5. With
+          qualifying races all over the world and across three new battleground
+          regions in the US (East, West, Midwest), this year’s series just means
+          more. Catch all the action on NBC, FOX or TVG all summer long.
+        </p>
+        <button>watch</button>
+      </TextHeaderContainer>
+
+      {!hamburguerState && (
+        <Options>
+          <FontAwesomeIcon
+            style={{ cursor: "pointer", height: "50px", color: "white" }}
+            icon={faRoute}
+          />
+          <FontAwesomeIcon
+            style={{ cursor: "pointer", height: "50px", color: "white" }}
+            icon={faCartShopping}
+          />
+          <FontAwesomeIcon
+            style={{ cursor: "pointer", height: "50px", color: "white" }}
+            icon={faCalendarDays}
+          />
+        </Options>
+      )}
+    </Image3>
   );
 };
 export default PrincipalPage;
