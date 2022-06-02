@@ -22,6 +22,16 @@ export const Image = styled.div`
   background-repeat: no-repeat;
   background-size: 100%;
 `;
+export const Image2 = styled.div`
+  margin: 0%;
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://i.pinimg.com/564x/49/ca/18/49ca18cae8391087e48198cab95abb2c.jpg");
+  background-position-x: center;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+`;
 
 export const TextHeaderContainer = styled.div`
   position: absolute;
