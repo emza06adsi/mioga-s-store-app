@@ -1,24 +1,11 @@
-import React, { useReducer, useEffect, useState } from "react";
+import React, { useState } from "react";
 
-import { Header } from "../templates/header";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Header } from "../templates/header/header";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Main } from "../templates/main/main";
 
-import {
-  faRoute,
-  faCartShopping,
-  faCalendarDays,
-  faSearch,
-} from "@fortawesome/free-solid-svg-icons";
-import {
-  HamburgerModal,
-  Options,
-  TextHeaderContainer,
-  Image,
-  Image2,
-  Image3,
-} from "./page.style";
+import { HamburgerModal } from "./page.style";
 
 const PrincipalPage = () => {
   const [hamburguerState, setHamburguerState] = useState(false);
@@ -33,7 +20,9 @@ const PrincipalPage = () => {
         <Route
           path="/"
           element={
-            <App
+            <Main
+              img="https://i.pinimg.com/564x/f3/3f/6f/f33f6f1971574e5b3966440ecc2d041d.jpg"
+              type="home"
               hamburguerState={hamburguerState}
               setHamburguerState={setHamburguerState}
             />
@@ -42,7 +31,9 @@ const PrincipalPage = () => {
         <Route
           path="sofa"
           element={
-            <App2
+            <Main
+              img="https://i.pinimg.com/564x/57/0d/4f/570d4f024950142992be6458bdfd4747.jpg"
+              type="sofa"
               hamburguerState={hamburguerState}
               setHamburguerState={setHamburguerState}
             />
@@ -51,7 +42,9 @@ const PrincipalPage = () => {
         <Route
           path="location"
           element={
-            <App3
+            <Main
+              img="https://i.pinimg.com/564x/41/f4/26/41f426b4cb4d4d45b3fc2d5e15783bd4.jpg"
+              type="location"
               hamburguerState={hamburguerState}
               setHamburguerState={setHamburguerState}
             />
@@ -62,128 +55,5 @@ const PrincipalPage = () => {
     </BrowserRouter>
   );
 };
-export interface IHamburguerState {
-  hamburguerState: boolean;
-  setHamburguerState: any;
-}
 
-const App = ({ hamburguerState, setHamburguerState }: IHamburguerState) => {
-  return (
-    <Image
-      onClick={() => {
-        setHamburguerState(false);
-      }}
-    >
-      <TextHeaderContainer>
-        <p className="principalText">mioga's store</p>
-        <p className="nextText">
-          Win, and you’re in. It’s the Breeders’ Cup Challenge Series, where the
-          world’s top Thoroughbreds compete for a starting spot at the 2022
-          Breeders’ Cup World Championships at Keeneland, Nov 4 & 5. With
-          qualifying races all over the world and across three new battleground
-          regions in the US (East, West, Midwest), this year’s series just means
-          more. Catch all the action on NBC, FOX or TVG all summer long.
-        </p>
-        <button>watch</button>
-      </TextHeaderContainer>
-
-      {!hamburguerState && (
-        <Options>
-          <FontAwesomeIcon
-            style={{ cursor: "pointer", height: "50px", color: "white" }}
-            icon={faRoute}
-          />
-          <FontAwesomeIcon
-            style={{ cursor: "pointer", height: "50px", color: "white" }}
-            icon={faCartShopping}
-          />
-          <FontAwesomeIcon
-            style={{ cursor: "pointer", height: "50px", color: "white" }}
-            icon={faCalendarDays}
-          />
-        </Options>
-      )}
-    </Image>
-  );
-};
-
-const App2 = ({ hamburguerState, setHamburguerState }: IHamburguerState) => {
-  return (
-    <Image2
-      onClick={() => {
-        setHamburguerState(false);
-      }}
-    >
-      <TextHeaderContainer>
-        <p className="principalText"> store mioga's</p>
-        <p className="nextText">
-          Win, and you’re in. It’s the Breeders’ Cup Challenge Series, where the
-          world’s top Thoroughbreds compete for a starting spot at the 2022
-          Breeders’ Cup World Championships at Keeneland, Nov 4 & 5. With
-          qualifying races all over the world and across three new battleground
-          regions in the US (East, West, Midwest), this year’s series just means
-          more. Catch all the action on NBC, FOX or TVG all summer long.
-        </p>
-        <button>watch</button>
-      </TextHeaderContainer>
-
-      {!hamburguerState && (
-        <Options>
-          <FontAwesomeIcon
-            style={{ cursor: "pointer", height: "50px", color: "white" }}
-            icon={faRoute}
-          />
-          <FontAwesomeIcon
-            style={{ cursor: "pointer", height: "50px", color: "white" }}
-            icon={faCartShopping}
-          />
-          <FontAwesomeIcon
-            style={{ cursor: "pointer", height: "50px", color: "white" }}
-            icon={faCalendarDays}
-          />
-        </Options>
-      )}
-    </Image2>
-  );
-};
-
-const App3 = ({ hamburguerState, setHamburguerState }: IHamburguerState) => {
-  return (
-    <Image3
-      onClick={() => {
-        setHamburguerState(false);
-      }}
-    >
-      <TextHeaderContainer>
-        <p className="principalText"> store mioga's</p>
-        <p className="nextText">
-          Win, and you’re in. It’s the Breeders’ Cup Challenge Series, where the
-          world’s top Thoroughbreds compete for a starting spot at the 2022
-          Breeders’ Cup World Championships at Keeneland, Nov 4 & 5. With
-          qualifying races all over the world and across three new battleground
-          regions in the US (East, West, Midwest), this year’s series just means
-          more. Catch all the action on NBC, FOX or TVG all summer long.
-        </p>
-        <button>watch</button>
-      </TextHeaderContainer>
-
-      {!hamburguerState && (
-        <Options>
-          <FontAwesomeIcon
-            style={{ cursor: "pointer", height: "50px", color: "white" }}
-            icon={faRoute}
-          />
-          <FontAwesomeIcon
-            style={{ cursor: "pointer", height: "50px", color: "white" }}
-            icon={faCartShopping}
-          />
-          <FontAwesomeIcon
-            style={{ cursor: "pointer", height: "50px", color: "white" }}
-            icon={faCalendarDays}
-          />
-        </Options>
-      )}
-    </Image3>
-  );
-};
 export default PrincipalPage;
