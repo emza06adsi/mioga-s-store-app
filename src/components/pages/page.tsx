@@ -56,4 +56,6 @@ const PrincipalPage = () => {
   );
 };
 
+  
+
 export default PrincipalPage;

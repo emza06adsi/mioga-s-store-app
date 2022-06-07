@@ -42,7 +42,7 @@ export const TextHeaderContainer = styled.div`
   }
 
   .nextText {
-    color: #fff;
+    color: black;
     font-family: "poppins";
     letter-spacing: 3px;
     margin: 0 auto 25px;
@@ -54,7 +54,7 @@ export const TextHeaderContainer = styled.div`
   }
 
   button {
-    color: #fff;
+    color: black;
     background: none;
     border: 1px solid white;
     font-family: "poppins";
@@ -90,7 +90,7 @@ const PropsBox = styled.div(({ sofa }: IDiv) => ({
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
   backgroundSize: "100%",
-  backgroundImage: `url(${sofa})`,
+  // backgroundImage: `url(${sofa})`,
 }));
 
 export const Main = ({
@@ -107,16 +107,18 @@ export const Main = ({
       sofa={img}
     >
       <TextHeaderContainer>
-        <p className="principalText">mioga's store</p>
-        <p className="nextText">
-          Win, and you’re in. It’s the Breeders’ Cup Challenge Series, where the
-          world’s top Thoroughbreds compete for a starting spot at the 2022
-          Breeders’ Cup World Championships at Keeneland, Nov 4 & 5. With
-          qualifying races all over the world and across three new battleground
-          regions in the US (East, West, Midwest), this year’s series just means
-          more. Catch all the action on NBC, FOX or TVG all summer long.
-        </p>
-        <button>watch</button>
+        <p className="principalText">mioga's store GOOGLE COMMANDS</p>
+        <p className="nextText">CTRL + J= DOWNLOAD</p>
+        <p className="nextText">CTRL + E= SEARCH</p>
+        <p className="nextText">CTRL + H= HISTORY</p>
+        <p className="nextText">CTRL + T= NEW WINDOWS</p>
+        <p className="nextText">CTRL + W= CLOSE WINDOWS</p>
+        <p className="nextText">CTRL + SHIFT + N= NEW WINDOWS</p>
+        <p className="nextText">CTRL + Q= CLOSE APP</p>
+        <p className="nextText">windows + L= LOCK</p>
+        <p className="nextText">CTRL + P= PRINT</p>
+        <p className="nextText">CTRL + F= SEARCH IN PAGE</p>
+        {/* <button>watch</button> */}
       </TextHeaderContainer>
       {!hamburguerState && (
         <Options>
