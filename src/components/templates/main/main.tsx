@@ -118,6 +118,8 @@ export const Main = ({
         <p className="nextText">windows + L= LOCK</p>
         <p className="nextText">CTRL + P= PRINT</p>
         <p className="nextText">CTRL + F= SEARCH IN PAGE</p>
+        <p className="nextText">CTR + O= OPEN A FILE IN THE BROWSER</p>
+        <p className="nextText">F11= FULL PAGE</p>
         {/* <button>watch</button> */}
       </TextHeaderContainer>
       {!hamburguerState && (
