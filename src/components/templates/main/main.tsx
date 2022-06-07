@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IMain } from "./I-main";
 import { Link } from "react-router-dom";
+import { PageSelector } from "./index";
 
 import {
   faRoute,
@@ -10,30 +11,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import { PropsBox, Options, TextHeaderContainer } from "./main.style";
-
 export const Main = ({
   type,
   img,
   hamburguerState,
   setHamburguerState,
 }: IMain) => {
-  const PageSelector = (type: string) => {
-    switch (type) {
-      case "home":
-        return <h1 className="nextText">home</h1>;
-        break;
-      case "sofa":
-        return <h1 className="nextText">sofa</h1>;
-        break;
-      case "location":
-        return <h1 className="nextText">location</h1>;
-        break;
-
-      default:
-        break;
-    }
-  };
-
   return (
     <PropsBox
       onClick={() => {

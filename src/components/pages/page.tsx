@@ -4,12 +4,10 @@ import { Header } from "../templates/header/header";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Main } from "../templates/main/main";
-
 import { HamburgerModal } from "./page.style";
-
+import { PageType } from "./IPage";
 const PrincipalPage = () => {
   const [hamburguerState, setHamburguerState] = useState(false);
-
   return (
     <BrowserRouter>
       <Header
@@ -21,8 +19,10 @@ const PrincipalPage = () => {
           path="/"
           element={
             <Main
-              img="https://i.pinimg.com/564x/f3/3f/6f/f33f6f1971574e5b3966440ecc2d041d.jpg"
-              type="home"
+              img={
+                process.env.REACT_APP_HOME_URL || process.env.HOME_BACKGROUND
+              }
+              type={PageType.HOME}
               hamburguerState={hamburguerState}
               setHamburguerState={setHamburguerState}
             />
@@ -32,8 +32,10 @@ const PrincipalPage = () => {
           path="sofa"
           element={
             <Main
-              img="https://i.pinimg.com/564x/57/0d/4f/570d4f024950142992be6458bdfd4747.jpg"
-              type="sofa"
+              img={
+                process.env.REACT_APP_SOFA_URL || process.env.HOME_BACKGROUND
+              }
+              type={PageType.SOFA}
               hamburguerState={hamburguerState}
               setHamburguerState={setHamburguerState}
             />
@@ -43,8 +45,11 @@ const PrincipalPage = () => {
           path="location"
           element={
             <Main
-              img="https://i.pinimg.com/564x/41/f4/26/41f426b4cb4d4d45b3fc2d5e15783bd4.jpg"
-              type="location"
+              img={
+                process.env.REACT_APP_LOCATION_URL ||
+                process.env.HOME_BACKGROUND
+              }
+              type={PageType.LOCATION}
               hamburguerState={hamburguerState}
               setHamburguerState={setHamburguerState}
             />
@@ -55,7 +60,5 @@ const PrincipalPage = () => {
     </BrowserRouter>
   );
 };
-
-  
 
 export default PrincipalPage;

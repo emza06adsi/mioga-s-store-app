@@ -15,7 +15,7 @@ export const Options = styled.div`
 
 export const TextHeaderContainer = styled.div`
   position: absolute;
-  top: 30%;
+  top: 25%;
   left: 119.55px;
   height: 400px;
   width: 800px;
@@ -27,7 +27,7 @@ export const TextHeaderContainer = styled.div`
     letter-spacing: 3px;
     margin: 0 auto 25px;
     max-width: 850px;
-    padding: 0 25px;
+    padding: 0 0px;
     text-transform: uppercase;
     font-size: 40px;
     font-weight: 800;
@@ -76,5 +76,5 @@ export const PropsBox = styled.div(({ sofa }: IDiv) => ({
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
   backgroundSize: "100%",
-  backgroundImage: `url(${sofa})`,
+  backgroundImage: `url(${sofa})` || "#0c2a44",
 }));
