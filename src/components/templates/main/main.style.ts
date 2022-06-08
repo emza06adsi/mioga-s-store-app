@@ -11,6 +11,17 @@ export const Options = styled.div`
   align-items: center;
   width: 100px;
   justify-content: space-around;
+
+  .link {
+    display: block;
+    margin: 1rem 0;
+  }
+
+  .fontAwesomeIcon {
+    cursor: pointer;
+    height: 50px;
+    color: white;
+  }
 `;
 
 export const TextHeaderContainer = styled.div`
@@ -19,7 +30,6 @@ export const TextHeaderContainer = styled.div`
   left: 119.55px;
   height: 400px;
   width: 800px;
-  /* border: 10px solid white; */
 
   .principalText {
     color: #fff;

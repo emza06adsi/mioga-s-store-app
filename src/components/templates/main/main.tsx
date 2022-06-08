@@ -2,15 +2,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IMain } from "./I-main";
 import { Link } from "react-router-dom";
 import { PageSelector } from "./index";
-
+import { PropsBox, Options, TextHeaderContainer } from "./main.style";
 import {
   faRoute,
   faCartShopping,
   faCalendarDays,
-  faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 
-import { PropsBox, Options, TextHeaderContainer } from "./main.style";
 export const Main = ({
   type,
   img,
@@ -18,49 +16,41 @@ export const Main = ({
   setHamburguerState,
 }: IMain) => {
   return (
-    <PropsBox
-      onClick={() => {
-        setHamburguerState(false);
-      }}
-      sofa={img}
-    >
-      <TextHeaderContainer>
-        <p className="principalText">mioga's store</p>
+    <>
+      <PropsBox
+        onClick={() => {
+          setHamburguerState(false);
+        }}
+        sofa={img}
+      >
+        <TextHeaderContainer>
+          <p className="principalText">
+            {process.env.REACT_APP_MIOGA_S_NAME || "mioga's store"}{" "}
+          </p>
 
-        {PageSelector(type)}
-
-        {/* <p className="nextText">
-          Win, and you’re in. It’s the Breeders’ Cup Challenge Series, where the
-          world’s top Thoroughbreds compete for a starting spot at the 2022
-          Breeders’ Cup World Championships at Keeneland, Nov 4 & 5. With
-          qualifying races all over the world and across three new battleground
-          regions in the US (East, West, Midwest), this year’s series just means
-          more. Catch all the action on NBC, FOX or TVG all summer long.
-        </p>
-        <button>watch</button> */}
-      </TextHeaderContainer>
-      {!hamburguerState && (
-        <Options>
-          <Link style={{ display: "block", margin: "1rem 0" }} to={`/`}>
-            <FontAwesomeIcon
-              style={{ cursor: "pointer", height: "50px", color: "white" }}
-              icon={faRoute}
-            />
-          </Link>
-          <Link style={{ display: "block", margin: "1rem 0" }} to={`/sofa`}>
-            <FontAwesomeIcon
-              style={{ cursor: "pointer", height: "50px", color: "white" }}
-              icon={faCartShopping}
-            />
-          </Link>
-          <Link style={{ display: "block", margin: "1rem 0" }} to={`/location`}>
-            <FontAwesomeIcon
-              style={{ cursor: "pointer", height: "50px", color: "white" }}
-              icon={faCalendarDays}
-            />
-          </Link>
-        </Options>
-      )}
-    </PropsBox>
+          {PageSelector(type)}
+        </TextHeaderContainer>
+        {!hamburguerState && (
+          <Options>
+            <Link className="link" to={`/`}>
+              <FontAwesomeIcon className="fontAwesomeIcon" icon={faRoute} />
+            </Link>
+            <Link className="link" to={`/sofa`}>
+              <FontAwesomeIcon
+                className="fontAwesomeIcon"
+                icon={faCartShopping}
+              />
+            </Link>
+            <Link className="link" to={`/location`}>
+              <FontAwesomeIcon
+                className="fontAwesomeIcon"
+                icon={faCalendarDays}
+              />
+            </Link>
+          </Options>
+        )}
+      </PropsBox>
+      <PropsBox sofa={process.env.REACT_APP_SOFA_URL  } />
+    </>
   );
 };
