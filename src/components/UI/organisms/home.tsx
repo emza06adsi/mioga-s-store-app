@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import { ISelectOfList, TypeOfRendering } from "./selectOfList/selectOfList";
+import axios from "axios";
 const product = [];
 
 export const Shopping = styled.div`
@@ -83,7 +84,7 @@ export type ImageModel = {
 };
 
 export const Home = ({ optionSelected }: ISelectOfList) => {
-  const articleState: ImageModel[] = [
+  const articleState_: ImageModel[] = [
     {
       id: "sfsdfsd",
       name: "himko toga",
@@ -173,44 +174,26 @@ export const Home = ({ optionSelected }: ISelectOfList) => {
       description: "--- ---",
     },
   ];
+  const [articleState, setArticleState] = useState<any>();
+  useEffect(() => {
+    getArticles();
+  }, [setArticleState]);
 
-  // useEffect(() => {
-  //   getArticles();
-  // }, [setArticleState]);
-
-  // const getArticles = async () => {
-  //   const json = await fetch(
-  //     `${process.env.REACT_APP_API_URL}/api/v1/get-images`
-  //   );
-  //   debugger;
-  //   console.log(json);
-  //   const objet = await json.json();
-  //   setArticleState();
-  //   debugger;
-  // };
+  const getArticles = async () => {
+    const json = await axios.get(
+      `${process.env.REACT_APP_API_URL}/api/v1/get-images`
+    );
+    debugger;
+    console.log(json)
+    setArticleState(json.data);
+    console.log(articleState);
+    // debugger;
+  };
   return (
     <>
       <Shopping>
-        {articleState.map(
-          ({
-            description,
-            name,
-            id,
-            price,
-            type,
-            url: { src },
-          }: ImageModel) => (
-            <div>
-              <img src={src} width="100px" alt="" />
-              <button> Comprar </button>
-            </div>
-          )
-        )}
-      </Shopping>
-
-      {optionSelected === TypeOfRendering.ALL && (
-        <Shopping>
-          {articleState.map(
+        {articleState &&
+          articleState.map(
             ({
               description,
               name,
@@ -225,6 +208,25 @@ export const Home = ({ optionSelected }: ISelectOfList) => {
               </div>
             )
           )}
+      </Shopping>
+
+      {optionSelected === TypeOfRendering.ALL && (
+        <Shopping>
+          {/* {articleState.map(
+            ({
+              description,
+              name,
+              id,
+              price,
+              type,
+              url: { src },
+            }: ImageModel) => (
+              <div>
+                <img src={src} width="100px" alt="" />
+                <button> Comprar </button>
+              </div>
+            )
+          )} */}
         </Shopping>
       )}
     </>

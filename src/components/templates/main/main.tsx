@@ -22,6 +22,9 @@ export const Main = ({
   setHamburguerState,
 }: IMain) => {
   const [optionSelected, setOptionSelected] = useState(TypeOfRendering.ALL);
+  
+  
+  
   return (
     <>
       <PropsBox
