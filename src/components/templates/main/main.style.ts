@@ -35,7 +35,6 @@ export const TextHeaderContainer = styled.div`
     color: #fff;
     font-family: "poppins";
     letter-spacing: 3px;
-    margin: 0 auto 25px;
     max-width: 850px;
     padding: 0 0px;
     text-transform: uppercase;

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
+import { ISelectOfList, TypeOfRendering } from "./selectOfList/selectOfList";
 const product = [];
 
 export const Shopping = styled.div`
@@ -81,7 +82,7 @@ export type ImageModel = {
   description: string;
 };
 
-export const Home = () => {
+export const Home = ({ optionSelected }: ISelectOfList) => {
   const articleState: ImageModel[] = [
     {
       id: "sfsdfsd",
@@ -206,6 +207,26 @@ export const Home = () => {
           )
         )}
       </Shopping>
+
+      {optionSelected === TypeOfRendering.ALL && (
+        <Shopping>
+          {articleState.map(
+            ({
+              description,
+              name,
+              id,
+              price,
+              type,
+              url: { src },
+            }: ImageModel) => (
+              <div>
+                <img src={src} width="100px" alt="" />
+                <button> Comprar </button>
+              </div>
+            )
+          )}
+        </Shopping>
+      )}
     </>
   );
 };

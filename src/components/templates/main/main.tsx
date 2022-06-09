@@ -1,8 +1,14 @@
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IMain } from "./I-main";
 import { Link } from "react-router-dom";
 import { PageSelector } from "./index";
 import { PropsBox, Options, TextHeaderContainer } from "./main.style";
+import {
+  SelectOfList,
+  TypeOfRendering,
+} from "../../UI/organisms/selectOfList/selectOfList";
+
 import {
   faRoute,
   faCartShopping,
@@ -15,6 +21,7 @@ export const Main = ({
   hamburguerState,
   setHamburguerState,
 }: IMain) => {
+  const [optionSelected, setOptionSelected] = useState(TypeOfRendering.ALL);
   return (
     <>
       <PropsBox
@@ -24,12 +31,14 @@ export const Main = ({
         sofa={img}
       >
         <TextHeaderContainer>
-          <p className="principalText">
-            {process.env.REACT_APP_MIOGA_S_NAME || "mioga's store"}{" "}
-          </p>
+          <SelectOfList
+            optionSelected={optionSelected}
+            setOptionSelected={setOptionSelected}
+          />
 
-          {PageSelector(type)}
+          {PageSelector(type,optionSelected)}
         </TextHeaderContainer>
+
         {!hamburguerState && (
           <Options>
             <Link className="link" to={`/`}>
@@ -50,7 +59,9 @@ export const Main = ({
           </Options>
         )}
       </PropsBox>
-      <PropsBox sofa={process.env.REACT_APP_SOFA_URL  } />
+      {optionSelected === TypeOfRendering.ALL && (
+        <PropsBox sofa={process.env.REACT_APP_SOFA_URL} />
+      )}
     </>
   );
 };
