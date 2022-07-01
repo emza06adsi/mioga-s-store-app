@@ -26,7 +26,7 @@ export const Options = styled.div`
 
 export const TextHeaderContainer = styled.div`
   position: absolute;
-  top: 25%;
+  top: 20%;
   left: 119.55px;
   height: 400px;
   width: 800px;

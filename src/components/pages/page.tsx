@@ -33,7 +33,7 @@ const PrincipalPage = () => {
           element={
             <Main
               img={
-                process.env.REACT_APP_SOFA_URL || process.env.HOME_BACKGROUND
+                process.env.REACT_APP_LOCATION_URL || process.env.HOME_BACKGROUND
               }
               type={PageType.SOFA}
               hamburguerState={hamburguerState}
